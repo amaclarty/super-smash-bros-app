@@ -1,8 +1,22 @@
 
 import './App.css';
+import Fighter from './components/Fighter'
 
 function App() {
-  const fighters = ['Wario', 'Yoshi', 'Ganondorf', 'Kirby', 'Samus', 'Sheik', 'Link', 'Mario']
+
+  const fighters = [
+    {name: 'Wario', color: 'ochre'},
+    {name: 'Yoshi', color: 'green'},
+    {name: 'Ganondorf', color: 'red'},
+    {name: 'Kirby', color: 'pink'},
+    {name: 'Samus', color: 'firebrick'},
+    {name: 'Sheik', color: 'midnightblue'},
+    {name: 'Link', color: 'green'},
+    {name: 'Mario', color: 'blue'},
+    {name: 'Zelda', color: 'white'},
+    {name: 'Fox', color: 'gray'},
+    {name: 'Inkling', color: 'purple'}
+  ]
   return (
     <div className="App">
        <h1>Fighters</h1>
@@ -10,10 +24,7 @@ function App() {
        {
         fighters.map((element, index) => {
           return(
-            <div>
-              <img src={`https://www.smashbros.com/assets_v2/img/fighter/thumb_a/${element.toLowerCase()}.png`} className="fighter-img"/>
-              <h5 className="fighter-name">{element}</h5>
-            </div>
+            <Fighter fighter={element}/>
           )
         })
        }
